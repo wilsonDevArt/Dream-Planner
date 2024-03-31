@@ -1,0 +1,23 @@
+{% extends 'dream_list/base.html' %} 
+
+{% block content %}
+<h1>Dream Steps of:</h1>
+<h5>{{add_step.dream}}</h5>
+
+</br>
+
+  {% for list_steps in list_steps %}
+  
+  <div class="card text-center text-bg-info" style="width: 18rem;">
+    <div class="card-body">
+      <h2>My Step:</h2>
+      <h5 class="card-title"> {{list_steps}} </h5>
+      <h5 class="card-title"> {{list_steps.time_line}} </h5>
+      <a href={% url 'edit_step' list_steps.id %} class="btn btn-primary">Edit</a>
+      <a href={% url 'delete_step' list_steps.id %} class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+</br>
+  {% endfor %}
+
+  {% endblock%}

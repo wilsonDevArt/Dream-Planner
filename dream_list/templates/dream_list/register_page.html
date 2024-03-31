@@ -1,0 +1,24 @@
+{% extends 'dream_list/base.html' %}
+{% block content %}
+
+{% if form.error %}
+ <p>Try Again</P>
+{%endif%}
+
+<div class="col-md-6 offset-md-3">
+  <h1>Register Page</h1>
+  <br/>
+  
+  <form method="POST" action={% url 'register_page'%}>
+    {% csrf_token %}
+  
+    {{ form.as_p }}
+  
+  <br/>
+    <button type="submit" class="btn btn-secondary" value="submit">Register</button>
+  
+  </form>
+  
+  </div>
+
+{% endblock %}
